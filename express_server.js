@@ -26,7 +26,9 @@ app.get("/entryway", (req, res) => {
 });
 
 app.get("/welcomewagon", (req, res) => {
-  res.send("<html><body>welcome wagon</b></body></html>\n");
+  // res.send("<html><body>welcome wagon</b></body></html>\n");
+  res.render("welcomewagon");
+  
 });
 
 app.get("/catherder", (req, res) => {
@@ -35,15 +37,19 @@ app.get("/catherder", (req, res) => {
 });
 
 app.get("/creativecutcall", (req, res) => {
-  res.send("<html><body>creative cut call<b>World</b></body></html>\n");
+  // res.send("<html><body>creative cut call<b>World</b></body></html>\n");
+  res.render("creativecutcall");
 });
 
 app.get("/regroup", (req, res) => {
-  res.send("<html><body>regroup<b>World</b></body></html>\n");
+  // res.send("<html><body>regroup<b>World</b></body></html>\n");
+  res.render("regroup");
 });
 
 app.get("/goddessofanarchy", (req, res) => {
-  res.send("<html><body>goddess of anarchy<b>World</b></body></html>\n");
+  // res.send("<html><body>goddess of anarchy<b>World</b></body></html>\n");
+  res.render("goddessofanarchy");
+  
 });
 
 app.get("/urls.json", (req, res) => {
