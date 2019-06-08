@@ -3,6 +3,7 @@ var app = express();
 var PORT = 8080; // default port 8080
 
 app.set("view engine", "ejs");
+app.use( express.static( "public" ) );
 
 const URL = "http://inflexions.org/cepholopodresearch/p5/gifs/"
 
@@ -10,6 +11,8 @@ var urlDatabase = {
   "thingy1": URL + "bbl.gif",
   "thingy2": "http://www.inflexions.org"
 };
+
+
 
 app.get("/", (req, res) => {
   res.send("Helloworld!");
@@ -27,7 +30,8 @@ app.get("/welcomewagon", (req, res) => {
 });
 
 app.get("/catherder", (req, res) => {
-  res.send("<html><body>cat herder<b>World</b></body></html>\n");
+  res.render("catherder");
+  // res.send("<html><body>cat herder<b>World</b></body></html>\n");
 });
 
 app.get("/creativecutcall", (req, res) => {
