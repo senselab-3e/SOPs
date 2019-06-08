@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var PORT = 8080; // default port 8080
 
+app.set("view engine", "ejs");
+
 const URL = "http://inflexions.org/cepholopodresearch/p5/gifs/"
 
 var urlDatabase = {
@@ -11,10 +13,13 @@ var urlDatabase = {
 
 app.get("/", (req, res) => {
   res.send("Helloworld!");
+  
 });
 
 app.get("/entryway", (req, res) => {
-  res.send("<html><body>entry way<b>World</b></body></html>\n");
+  // res.send("<html><body>entry way<b>World</b></body></html>\n");
+  let templateVars = { greeting: 'Hello World!' };
+  res.render("hello_world", templateVars);
 });
 
 app.get("/welcomewagon", (req, res) => {
@@ -44,3 +49,6 @@ app.get("/urls.json", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
 });
+
+
+// By using the <%= %> syntax, we tell EJS that we want the result of this code to show up on our page. If we would like to run some code without it displaying on the page, then we can use the slightly different syntax of <% %>. For example, if we only wanted to show our greeting if it has a value, then we could do something like this:
