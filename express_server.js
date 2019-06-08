@@ -15,7 +15,8 @@ var urlDatabase = {
 
 
 app.get("/", (req, res) => {
-  res.send("Helloworld!");
+  let templateVars = { greeting: 'ENtryway!' };
+  res.render("entryway", templateVars);
   
 });
 
