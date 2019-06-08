@@ -18,8 +18,8 @@ app.get("/", (req, res) => {
 
 app.get("/entryway", (req, res) => {
   // res.send("<html><body>entry way<b>World</b></body></html>\n");
-  let templateVars = { greeting: 'Hello World!' };
-  res.render("hello_world", templateVars);
+  let templateVars = { greeting: 'ENtryway!' };
+  res.render("entryway", templateVars);
 });
 
 app.get("/welcomewagon", (req, res) => {
@@ -49,6 +49,8 @@ app.get("/urls.json", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
 });
+
+//you don't have to add the subdirectory paths of views, when naming all the ejs files within there, in the res.render. Express just knows to look there. it is a convention that needs to be followed. 
 
 
 // By using the <%= %> syntax, we tell EJS that we want the result of this code to show up on our page. If we would like to run some code without it displaying on the page, then we can use the slightly different syntax of <% %>. For example, if we only wanted to show our greeting if it has a value, then we could do something like this:
