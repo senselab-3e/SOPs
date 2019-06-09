@@ -1,8 +1,16 @@
 var express = require("express");
 var app = express();
 var PORT = 8080; // default port 8080
-
+const sass = require("node-sass-middleware");
 app.set("view engine", "ejs");
+
+app.use("/sass", sass({
+  src: __dirname + "/sass",
+  dest: __dirname + "/public/assets/css",
+  debug: true,
+  outputStyle: 'expanded'
+}));
+
 app.use( express.static( "public" ) );
 
 const URL = "http://inflexions.org/cepholopodresearch/p5/gifs/"

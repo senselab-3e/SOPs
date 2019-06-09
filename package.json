@@ -4,7 +4,10 @@
   "description": "3ecologies SOP working directory",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss public/assets/css/mystyles.css",
+  "css-watch": "npm run css-build -- --watch",
+  "start": "npm run css-watch"
   },
   "repository": {
     "type": "git",
