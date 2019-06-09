@@ -12,8 +12,6 @@ var urlDatabase = {
   "thingy2": "http://www.inflexions.org"
 };
 
-
-
 app.get("/", (req, res) => {
   let templateVars = { greeting: 'ENtryway!' };
   res.render("entryway", templateVars);
